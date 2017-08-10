@@ -13,8 +13,10 @@ main_page_head = '''
     <title>Fresh Tomatoes!</title>
 
     <!-- Bootstrap 3 -->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" 
+          href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" 
+          href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <style type="text/css" media="screen">
@@ -95,7 +97,7 @@ main_page_content = '''
       <div class="modal-dialog">
         <div class="modal-content">
           <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
-            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/> 
           </a>
           <div class="scale-media" id="trailer-video-container">
           </div>
@@ -123,7 +125,9 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" 
+            data-trailer-youtube-id="{trailer_youtube_id}"
+             data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h2>{movie_title}</h2>
 </div>
@@ -167,24 +171,32 @@ def open_movies_page(movies):
     url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
 
+# create instance of movie 1
+# 3 paras are: title, trailor url, poster url
 movie1 = media.Movie(
     'Game of Thrones: Season 7 Episode 5',
     'https://www.youtube.com/watch?v=NNY73_YcZVY',
     'https://i.ytimg.com/vi/NNY73_YcZVY/maxresdefault.jpg'
 )
 
+# create instance of movie 2
+# 3 paras are: title, trailor url, poster url
 movie2 = media.Movie(
     'Game of Thrones: Season 7 Episode 4',
     'https://www.youtube.com/watch?v=cqgi1IjDoU8',
-    'http://www.indiewire.com/wp-content/uploads/2017/08/game-of-thrones-brienne-arya.jpg?w=780'
+    'http://www.indiewire.com/wp-content/uploads/2017/08/game-of-thrones-brienne-arya.jpg?w=780'  # noqa
 )
 
+# create instance of movie 3
+# 3 paras are: title, trailor url, poster url
 movie3 = media.Movie(
     'Game of Thrones: Season 7 Episode 3',
     'https://www.youtube.com/watch?v=z2pRLR6Ns5I',
     'https://i.ytimg.com/vi/YUDhVrnuwF8/maxresdefault.jpg'
 )
 
+# hold all movie instance inside a list
 movies = [movie1, movie2, movie3]
 
+# call the open_movies_page method and pass movies list to it
 open_movies_page(movies)
