@@ -1,6 +1,7 @@
 import webbrowser
 import os
 import re
+import media
 
 
 # Styles and scripting for the page
@@ -165,3 +166,25 @@ def open_movies_page(movies):
     # open the output file in the browser (in a new tab, if possible)
     url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
+
+movie1 = media.Movie(
+    'Game of Thrones: Season 7 Episode 5',
+    'https://www.youtube.com/watch?v=NNY73_YcZVY',
+    'https://i.ytimg.com/vi/NNY73_YcZVY/maxresdefault.jpg'
+)
+
+movie2 = media.Movie(
+    'Game of Thrones: Season 7 Episode 4',
+    'https://www.youtube.com/watch?v=cqgi1IjDoU8',
+    'http://www.indiewire.com/wp-content/uploads/2017/08/game-of-thrones-brienne-arya.jpg?w=780'
+)
+
+movie3 = media.Movie(
+    'Game of Thrones: Season 7 Episode 3',
+    'https://www.youtube.com/watch?v=z2pRLR6Ns5I',
+    'https://i.ytimg.com/vi/YUDhVrnuwF8/maxresdefault.jpg'
+)
+
+movies = [movie1, movie2, movie3]
+
+open_movies_page(movies)
